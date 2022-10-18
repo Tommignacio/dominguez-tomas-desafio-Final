@@ -23,7 +23,6 @@ const signup = async (req, email, password, done) => {
 			{ password, repeatPassword },
 			req.body
 		);
-		console.log("user local", user);
 		idCart = cart?._id;
 		idUser = user?._id;
 		if (error) return done(null, false);

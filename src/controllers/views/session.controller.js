@@ -17,7 +17,6 @@ const renderProfile = async (req, res, next) => {
 	template.set("ejs");
 	try {
 		const user = req.user;
-		console.log("user PROFILE", user);
 		res.render(
 			"ejs/index",
 			template.render("Mi Perfil", { renderProfile: { user } })

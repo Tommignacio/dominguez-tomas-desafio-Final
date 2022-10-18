@@ -82,17 +82,8 @@ npm run watch-css
   "avatar": <not required>,
   "phone": 459997709,
   "card": 120113144
-  },
-  {
-  "firstname": "test",
-  "lastname": "account",
-  "birth": "01/01/1990",
-  "email": "fake@gmail.com",
-  "password": "1234",
-  "avatar": "",
-  "phone": 459997709,
-  "card": 120113144
-  },
+  }
+
 
 
 ```
@@ -105,7 +96,27 @@ _- Modificar el archivo .env de la siguiente manera:_
 - Cambiar el nombre a ".env"
 - Modificar los datos y guardar.
 
+_- Usar user admin para funciones de la API con postman :_
+
+- Poner en el env:
+
+```
+ADMIN_EMAIL=admin.test@gmail.com
+
+```
+
+- Ingresar session:
+
+```
+Email: admin.test@gmail.com
+Password: 1
+
+
+```
+
 ## **Recomendaciones 💬**
+
+- _Eliminar isAdmim y auth de las rutas para usar funcionalidades de la API con Postman ._
 
 - _Leer el archivo "env.md" para ver mas detalles a considerar._
 
