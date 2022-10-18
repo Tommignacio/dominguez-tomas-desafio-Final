@@ -120,6 +120,6 @@ Password: 1
 
 - _Leer el archivo "env.md" para ver mas detalles a considerar._
 
-## **Deploy del proyecto 🚀**
+## **Deploy del proyecto en HEROKU 🚀**
 
-- _HEROKU_
+- _https://backend-proyect-tomas.herokuapp.com/_
