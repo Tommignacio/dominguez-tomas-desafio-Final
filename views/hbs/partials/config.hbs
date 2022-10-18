@@ -1,0 +1,43 @@
+<section class="page page__config">
+  <a href="/" class="btn btn__link text" style="position: fixed; top: 4rem; left:4rem; padding: 2rem;">← Salir</a>
+  <article class="text config">
+    <h1 class="text__title text--center">Archivo de configuración <span style="font-style: italic;">({{renderServerConfig.NODE_ENV}})</span>:</h1>
+    <h3 class="text--center">PORT: {{renderServerConfig.PORT}}</h3>
+    <ul class="text" style="margin-top: 1.5rem;">
+      <li>
+        <p>ADMIN_EMAIL:</p>
+        <p>{{renderServerConfig.ADMIN_EMAIL}}</p>
+      </li>
+      <li>
+        <p>DB_PERSISTENCE_TYPE:</p>
+        <p>{{renderServerConfig.DB_PERSISTENCE_TYPE}}</p>
+      </li>
+      {{#if renderServerConfig.dbIsCloud}}
+        <li>
+          <p>DB_PERSISTENCE_SERVER:</p>
+          <p>{{renderServerConfig.DB_PERSISTENCE_SERVER}}</p>
+        </li>
+      {{/if}}
+      <li>
+        <p>SESSION_NAME:</p>
+        <p>{{renderServerConfig.SESSION_NAME}}</p>
+      </li>
+      <li>
+        <p>SESSION_SECRET:</p>
+        <p>{{renderServerConfig.SESSION_SECRET}}</p>
+      </li>
+      <li>
+        <p>SESSION_TIMEOUT:</p>
+        <p>{{renderServerConfig.SESSION_TIMEOUT}}</p>
+      </li>
+      <li>
+        <p>URL de la base de datos (Coockie):</p>
+        <p>{{renderServerConfig.uriDbCoockie}}</p>
+      </li>
+      <li>
+        <p>URL de la base de datos (Data):</p>
+        <p>{{renderServerConfig.uriDbData}}</p>
+      </li>
+    </ul>
+  </article>
+</section>

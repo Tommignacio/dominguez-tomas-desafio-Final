@@ -1,0 +1,124 @@
+.btn {
+  background-color : transparent;
+  border           : 0.2rem solid transparent;
+  color            : black;
+  display          : block;
+  font-size        : 1.3rem;
+  padding          : 0.4rem;
+  text-align       : center;
+  transition       : 0.3s all;
+  &__session {
+    &-submit {
+      border-radius  : 2.5rem;
+      margin-top     : 3rem;
+      padding        : 1.5rem;
+      text-transform : uppercase;
+    }
+    &-change {
+      overflow       : hidden;
+      padding        : 1.5rem;
+      position       : relative;
+      text-transform : uppercase;
+      transition     : 0.3s;
+      @include before {
+        background-color : black;
+        bottom           : -100%;
+        display          : block;
+        left             : 0;
+        position         : absolute;
+        right            : 0;
+        transition       : 0.3s;
+        z-index          : -1;
+        @include dimentions;
+      }
+      &:hover {
+        @include before {
+          bottom: 0;
+        }
+      }
+    }
+  }
+  &__logout {
+    text-shadow: 0 0 0.5rem red;
+  }
+  &__search {
+    background-color : crimson;
+    border-radius    : 0.5rem;
+    color            : white;
+    opacity          : 0.8;
+    &:hover {
+      box-shadow : 0 0 0.5rem 0.5rem rgb(220, 20, 60, 0.26);
+      opacity    : 1;
+    }
+  }
+  &__link {
+    color: blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__purchase {
+    margin     : auto;
+    max-width  : 20rem;
+    padding    : 0.6rem;
+    transition : 0.3s;
+    @include dimentions($height: max-content);
+    &:hover {
+      background-color : crimson;
+      border-radius    : 2rem;
+      color            : white;
+    }
+  }
+  &__delete {
+    color     : white;
+    font-size : 3rem;
+    @include dimentions;
+    &:hover {
+      color: red;
+    }
+  }
+  &__close {
+    border-radius : 50%;
+    color         : black;
+    font-weight   : 900;
+    @include dimentions($width: 3rem, $height: 3rem);
+    &:hover {
+      color: red;
+    }
+  }
+  &__toggle-message {
+    border: none;
+    background-color: crimson;
+    z-index: 10;
+    @include dimentions($height: 4rem);
+    &:hover {
+      background-color: rgba(220, 20, 60, 0.9);
+    }
+  }
+  &__generic {
+    background-color : white;
+    border-radius    : 2rem;
+    display          : block;
+    opacity          : 0.7;
+    transform        : scale(0.9);
+    transition       : 0.3s;
+    &:hover {
+      color     : crimson;
+      opacity   : 1;
+      transform : scale(1);
+    }
+  }
+  &__showImg {
+    bottom     : 0;
+    font-size  : 1rem;
+    left       : 0;
+    opacity    : 0;
+    position   : absolute;
+    right      : 0;
+    transition : 0.3s;
+    &:hover {
+      background-color : rgba(128, 128, 128, 0.5);
+      opacity          : 1;
+    }
+  }
+}

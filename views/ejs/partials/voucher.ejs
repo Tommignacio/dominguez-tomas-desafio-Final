@@ -1,0 +1,44 @@
+<aside class="aside appear" id="aside">
+  <section class="aside__vaucher">
+    <div style="height: 0; display: flex; justify-content: flex-end; position: sticky; top: 0;">
+      <button type="button" class="btn btn__close" id="close-aside">X</button>
+    </div>
+    <h3 class="text text__title">Mi Voucher</h3>
+    <% if (renderCart.voucher) { %>
+      <table class="aside__table" id="table-aside">
+        <caption class="text text--center">
+          <span style="font-weight: bold;">ID de compra:</span> <%= renderCart.voucher._id %>
+        </caption>
+        <caption class="text text--center">
+          <span style="font-weight: bold;">Email registrado:</span> <%= renderCart.voucher.owner.email %>
+        </caption>
+        <thead>
+          <tr class="text text__subtitle table__header">
+            <th><p>Products</p></th>
+            <th><p>Price</p></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% renderCart.voucher.products.forEach(product => { %>
+            <tr class="text">
+              <td>
+                <h4><%= product.title %></h3>
+              </td>
+              <td>
+                <p>$<%= product.price %></p>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+        <tfoot>
+          <tr class="text">
+            <td><p>TOTAL:</p></td>
+            <td>
+              <p>$<%= renderCart.voucher.total %></p>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    <% } %>
+  </section>
+</aside>

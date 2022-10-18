@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Proyecto Final | Backend</title>
+		<link rel="stylesheet" href="./styles/css/app.css" />
+	</head>
+	<body>
+		<section class="page page__session">
+			<aside class="session">
+				<section
+					class="session__modal session__modal--rigth"
+					id="session-modal"
+				>
+					<section class="session__change">
+						<p class="text text__subtitle text__session">
+							¿Deseas iniciar sesión?
+						</p>
+						<button class="btn btn__session-change text btn__generic">
+							Inicia sesión Aquí
+						</button>
+					</section>
+					<section class="session__change session__change--show">
+						<p class="text text__subtitle text__session">
+							¿Deseas registrarte?
+						</p>
+						<button class="btn btn__session-change text btn__generic">
+							Registrate Aquí
+						</button>
+					</section>
+					<form action="/auth/social" method="post" class="session__btn">
+						<p class="text text__session">O ingresa mediante:</p>
+						<div class="session__btn-container">
+							<p id="session-gg" class="btn btn__session-social">Google</p>
+							<p id="session-li" class="btn btn__session-social">linkedin</p>
+							<p id="session-dc" class="btn btn__session-social">discord</p>
+						</div>
+					</form>
+				</section>
+				<section class="session__form">
+					<form
+						action="/auth/login"
+						method="post"
+						class="session__form-container session__form-container--show"
+						id="form-login"
+					>
+						<div>
+							<label
+								for="login_email"
+								class="text session__form__label required"
+								>Email:
+							</label>
+							<input
+								type="email"
+								name="username"
+								id="login_email"
+								class="input session__form__input"
+								placeholder="Ingresar correo"
+							/>
+						</div>
+						<div>
+							<label
+								for="login_password"
+								class="text session__form__label required"
+								>Password:
+							</label>
+							<input
+								type="password"
+								name="password"
+								id="login_password"
+								class="input session__form__input"
+								placeholder="Ingresar contraseña"
+							/>
+						</div>
+						<button type="submit" class="btn btn__session-submit btn__generic">
+							Ingresar
+						</button>
+					</form>
+					<form action="/auth/signup" method="post" id="form-signup">
+						<section class="session__form-container" id="form-user-data">
+							<div>
+								<label
+									for="signup_firstname"
+									class="text session__form__label required"
+									>Firstname:
+								</label>
+								<input
+									type="text"
+									name="firstname"
+									id="signup_firstname"
+									class="input session__form__input"
+									placeholder="Ingresa tu nombre"
+									required
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_lastname"
+									class="text session__form__label required"
+									>Lastname:
+								</label>
+								<input
+									type="text"
+									name="lastname"
+									id="signup_lastname"
+									class="input session__form__input"
+									placeholder="Ingresa tu apellido"
+									required
+								/>
+							</div>
+							<div>
+								<label for="signup_avatar" class="text session__form__label"
+									>Avatar:
+								</label>
+								<input
+									type="url"
+									name="avatar"
+									id="signup_avatar"
+									class="input session__form__input"
+									placeholder="Ingresa una imagen"
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_phone"
+									class="text session__form__label required"
+									>Phone:
+								</label>
+								<input
+									type="number"
+									name="phone"
+									id="signup_phone"
+									class="input session__form__input"
+									placeholder="Ingresa tu numero telefónico"
+									required
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_birth"
+									class="text session__form__label required"
+									>Date of birth:
+								</label>
+								<input
+									type="date"
+									name="birth"
+									id="signup_birth"
+									class="input session__form__input"
+									required
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_address"
+									class="text session__form__label required"
+									>Address:
+								</label>
+								<input
+									type="text"
+									name="address"
+									id="signup_address"
+									class="input session__form__input"
+									placeholder="Dirección de envío"
+									required
+								/>
+							</div>
+							<button
+								type="button"
+								class="btn btn__session-submit btn__generic"
+								id="btn-form-next"
+							>
+								Siguiente →
+							</button>
+						</section>
+						<section class="session__form-container" id="form-user-session">
+							<div>
+								<label
+									for="signup_email"
+									class="text session__form__label required"
+									>Email:
+								</label>
+								<input
+									type="email"
+									name="username"
+									id="signup_email"
+									class="input session__form__input"
+									placeholder="Crear un correo"
+									required
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_password"
+									class="text session__form__label required"
+									>Password:
+								</label>
+								<input
+									type="password"
+									name="password"
+									id="signup_password"
+									class="input session__form__input"
+									placeholder="Crear una contraseña"
+									required
+								/>
+							</div>
+							<div>
+								<label
+									for="signup_password_repeat"
+									class="text session__form__label required"
+									>Repeat password:
+								</label>
+								<input
+									type="password"
+									name="repeatPassword"
+									id="signup_password_repeat"
+									class="input session__form__input"
+									placeholder="Repetir contraseña"
+									required
+								/>
+							</div>
+							<button
+								type="button"
+								class="btn btn__session-submit btn__generic"
+								id="btn-form-back"
+							>
+								← Volver
+							</button>
+							<button
+								type="submit"
+								class="btn btn__session-submit btn__generic"
+							>
+								Registrar
+							</button>
+						</section>
+					</form>
+				</section>
+			</aside>
+		</section>
+		<script src="./scripts/session.js"></script>
+	</body>
+</html>

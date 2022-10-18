@@ -1,0 +1,69 @@
+<main class="page page__products">
+  <h1 class="text text__title">Productos</h1>
+  <section class="products">
+    <section class="products__filter">
+      <p class="text text--center">FILTER</p>
+      <form class="products__form" method="get">
+        <input class="input__search-name" type="search" placeholder="Buscar..." name="searchName">
+        <button class="btn btn__search" type="submit">Search</button>
+      </form>
+      <section class="products__category">
+        <p class="text">Filter by category: </p>
+        <ul class="text">
+          <% renderProducts.categories.forEach(category => { %>
+            <li>
+              <a href="/products/<%= category %>" class="btn">
+                <%= category.charAt(0).toUpperCase() + category.substring(1).toLowerCase() %>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+      <form class="products__form" method="get">
+        <label for="inputRange" class="text">Maximum price: $<span id="renderMaxPrice"></span></label>
+        <input 
+          type="range" 
+          class="input__range-price" 
+          min="1" 
+          max="1000" 
+          id="inputRange" 
+          name="maxPrice" 
+          value="<%= renderProducts.value %>"
+        >
+        <div>
+          <button type="submit" class="btn btn__search">Filter</button>
+          <a href="/products" class="btn btn__link">Reset Filter</a>
+        </div>
+      </form>
+    </section>
+    <section class="products__container">
+      <% if (renderProducts.getProducts.length != 0) { %>
+        <% renderProducts.getProducts.forEach(product => { %>
+          <figure class="products__card">
+            <picture class="img img__products">
+              <img src="<%= product.thumbnail %>" alt="<%= product.title %>" title="<%= product.title %>">
+            </picture>
+            <section class="products__details">
+              <h5 class="text text__subtitle text--uppercase"><%= product.title %></h5>
+              <p class="text"><span style="font-weight: bold;">Precio</span>: $<%= product.price %></p>
+              <p class="text"><span style="font-weight: bold;">Categoria</span>: <%= product.category %></p>
+              <a href="/product/<%= product._id %>" class="btn btn__purchase">Ver producto</a>
+            </section>
+          </figure>
+        <% }); %>
+      <% } else { %>
+        <p class="text text__subtitle products__msg"><%= renderProducts.message %></p>
+      <% } %>
+    </section>
+  </section>
+</main>
+<script>
+  const inputRange = document.querySelector("#inputRange");
+  const renderMaxPrice = document.querySelector("#renderMaxPrice");
+  if(inputRange) {
+    inputRange.oninput = () => {
+      renderMaxPrice.innerText = +inputRange.value;
+    }
+    renderMaxPrice.innerText = +inputRange.value;
+  }
+</script>

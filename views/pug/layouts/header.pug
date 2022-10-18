@@ -1,0 +1,18 @@
+header(class="header")
+  section(class="header__container")
+    a(class="text header__logo" href="/") e-Commerce
+    ul(class="header__menu")
+      li
+        a(class="header__item text text__subtitle {{ actual.products }}" href="{{ page.products }}") Inicio
+          span
+      li
+        a(class="header__item text text__subtitle {{ actual.cart }}" href="{{ page.cart }}") Mi Carrito
+          span
+      li
+        a(class="header__item text text__subtitle {{ actual.profile }}" href="{{ page.profile }}") Perfil
+          span
+      li
+        a(class="header__item text text__subtitle {{ actual.chat }}" href="{{ page.chat }}") Chat
+          span
+      li
+        a(class="header__item text text__subtitle btn__logout" style="color: red; text-decoration: none;" href="/logout") Logout

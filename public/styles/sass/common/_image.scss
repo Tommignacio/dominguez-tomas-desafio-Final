@@ -1,0 +1,33 @@
+.img {
+  display       : block;
+  overflow      : hidden;
+  &__products {
+    border-radius : 1rem;
+    margin        : auto;
+    @include img(cover);
+    @include dimentions($width: 15rem, $height: 15rem);
+  }
+  &__product {
+    max-height: 43rem;
+    @include img(contain);
+    @include dimentions;
+  }
+  &__wallpaper {
+    @include img(cover);
+    @include dimentions($height: 18rem);
+  }
+  &__avatar {
+    border-radius : 50%;
+    border        : 0.2rem solid black;
+    bottom        : -4rem;
+    box-shadow    : 0rem 0.5rem 1rem black;
+    overflow      : hidden;
+    position      : absolute;
+    @include img(cover);
+    @include dimentions(1, 10rem, 10rem);
+  }
+  &__renderImg {
+    @include img(contain);
+    @include dimentions($width: 100vw, $height: 100vh);
+  }
+}

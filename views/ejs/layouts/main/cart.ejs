@@ -1,0 +1,76 @@
+<main class="page page__cart">
+  <h1 class="text text__title">Mi Carrito</h1>
+  <% if (renderCart.voucher) { %>
+    <%- include('../../partials/voucher.ejs') %>
+  <% } %>
+  <table class="cart">
+    <colgroup span="4" class="table">
+    <colgroup span="1" class="table table__delete">
+    <thead>
+      <tr class="text text__subtitle table__header">
+        <th><p>Thumbnail</p></th>
+        <th><p>Name</p></th>
+        <th><p>Price</p></th>
+        <th><p>Category</p></th>
+        <th class="text--white"><p>Delete</p></th>
+      </tr>
+    </thead>
+    <% if (renderCart.products.length != 0) { %>
+      <tbody>
+        <% renderCart.products.forEach(data => { %>
+          <% for( let i = 0; i < data.amount; i++ ) { %>
+            <tr class="cart__container text">
+              <td>
+                <picture class="img img__products">
+                  <img src="<%= data.product.thumbnail %>" alt="<%= data.product.title %>" title="<%= data.product.title %>">
+                </picture>
+              </td>
+              <td>
+                <h3><%= data.product.title %></h3>
+              </td>
+              <td>
+                <p>$<%= data.product.price %></p>
+              </td>
+              <td>
+                <p><%= data.product.category %></p>
+              </td>
+              <td>
+                <form action="/cart" method="post" style="height: 100%;">
+                  <input type="text" name="idStock" value="<%= data.product._id %>" style="display: none;">
+                  <button type="submit" class="btn btn__delete">🗑</button>
+                </form>
+              </td>
+            </tr>
+          <% } %>
+        <% }) %>
+      </tbody>
+      <tfoot>
+        <tr class="text">
+          <td colspan="5">
+            <form action="/cart/<%= `${renderCart._id}` %>" method="post">
+              <button type="submit" class="btn btn__purchase" style="display: block;">Comprar</button>
+            </form>
+          </td>
+        </tr>
+      </tfoot>
+    <% } else { %>
+      <tfoot>
+        <tr class="text">
+          <td colspan="5"><p>Aún no tienes productos</p></td>
+        </tr>
+      </tfoot>
+    <% } %>
+  </table>
+</main>
+<script>
+  const aside = document.querySelector("#aside");
+  const closeAside = document.querySelector("#close-aside");
+  const tableAside = document.querySelector("#table-aside");
+  if(closeAside) {
+    closeAside.addEventListener("click", e => {
+      aside.classList.remove("appear");
+      aside.classList.add("close");
+      tableAside.style.display = "none";
+    });
+  }
+</script>

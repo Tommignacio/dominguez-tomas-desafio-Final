@@ -1,0 +1,34 @@
+// █ █▄ ▄█ █▀▄ ▄▀▄ █▀▄ ▀█▀ ▄▀▄ █▄ █ ▀█▀ 
+// █ █ ▀ █ █▀  ▀▄▀ █▀▄  █  █▀█ █ ▀█  █  
+@import "./abstracts/reset";
+
+// ▄▀  ██▀ █▄ █ ██▀ █▀▄ ▄▀▄ █   
+// ▀▄█ █▄▄ █ ▀█ █▄▄ █▀▄ █▀█ █▄▄ 
+@import "./variables/declarations";
+@import "./variables/keyframe";
+@import "./variables/mixin";
+@import "./common/button";
+@import "./common/image";
+@import "./common/input";
+@import "./common/text";
+
+// █▄█ ██▀ ▄▀▄ █▀▄ ██▀ █▀▄ 
+// █ █ █▄▄ █▀█ █▄▀ █▄▄ █▀▄ 
+@import "./layouts/header";
+
+// █▄ ▄█ ▄▀▄ █ █▄ █ 
+// █ ▀ █ █▀█ █ █ ▀█ 
+@import "./layouts/main";
+@import "./layouts/aside";
+@import "./layouts/main/session";
+@import "./layouts/main/products";
+@import "./layouts/main/cart";
+@import "./layouts/main/profile";
+@import "./layouts/main/message";
+@import "./layouts/main/chat";
+@import "./layouts/main/config";
+@import "./layouts/main/error";
+
+// █▀ ▄▀▄ ▄▀▄ ▀█▀ ██▀ █▀▄ 
+// █▀ ▀▄▀ ▀▄▀  █  █▄▄ █▀▄ 
+@import "./layouts/footer";

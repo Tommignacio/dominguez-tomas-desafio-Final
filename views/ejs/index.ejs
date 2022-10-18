@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='<%= styles %>'>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+</head>
+<body>
+  <% if(renderError) { %>
+    <%- include('layouts/main/error.ejs') %>
+  <% } else if(renderLogout) { %>
+    <%- include('layouts/main/logout.ejs') %>
+  <% } else if(renderProfilePicture) { %>
+    <%- include('layouts/main/profile.ejs') %>
+  <% } else { %>
+    <%- include('layouts/header.ejs') %>
+    <%- include('partials/chat.ejs') %>
+    <%- include('layouts/main.ejs') %>
+    <%- include('layouts/footer.ejs') %>
+    <script src="<%= script %>"></script>
+    <script src="<%= socket %>"></script>
+  <% } %>
+</body>
+</html>

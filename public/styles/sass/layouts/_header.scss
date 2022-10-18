@@ -1,0 +1,60 @@
+.header {
+  background-color : black;
+  display          : flex;
+  @include center;
+  @include dimentions(10, $height: 8rem);
+  &__container {
+    display         : flex;
+    justify-content : space-between;
+    max-width       : 136.6rem;
+    padding         : 0 4rem;
+    @include dimentions;
+  }
+  &__logo {
+    color     : white;
+    font-size : 6rem;
+    padding   : 0.4rem 0;
+  }
+  &__menu {
+    display : flex;
+    gap     : 1rem;
+  }
+  &__item {
+    align-items     : center;
+    color           : white;
+    display         : flex;
+    height          : 100%;
+    justify-content : center;
+    opacity         : 0.8;
+    padding         : 1rem;
+    position        : relative;
+    &:hover {
+      opacity         : 1;
+      text-decoration : underline;
+    }
+  }
+}
+
+.actual {
+  opacity        : 1;
+  pointer-events : none;
+  text-decoration: underline;
+  & > span {
+    bottom          : 0;
+    display         : flex;
+    justify-content : center;
+    left            : 0;
+    position        : absolute;
+    right           : 0;
+    @include dimentions(11, 100%, 0);
+    @include after {
+      border        : 1rem solid transparent {
+        right-color : white;
+        top-color   : white;
+      };
+      display       : block;
+      margin-top    : -1rem;
+      transform     : rotate(-45deg);
+    }
+  }
+}

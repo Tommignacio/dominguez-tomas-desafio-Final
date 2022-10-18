@@ -1,0 +1,41 @@
+.page {
+  max-width  : 136.6rem;
+  min-height : calc(100vh - 8rem);
+  padding    : 2rem 4rem 6rem 2rem;
+  margin: auto;
+  @include dimentions;
+  &__session {
+    align-items     : center;
+    display         : flex;
+    justify-content : center;
+    padding         : 2rem;
+    @include dimentions($height: 100vh);
+  }
+  &__products {
+  }
+  &__product {
+  }
+  &__cart {
+  }
+  &__profile {
+  }
+  &__logout {
+  }
+  &__error {
+    display : flex;
+    height  : 100vh;
+    @include center;
+  }
+  &__config, &__info {
+    max-width: 75rem;
+    padding: 4rem;
+    display: flex;
+    overflow-y: auto;
+    @include center;
+    @include dimentions($height: 100vh);
+  }
+  &__chat {
+    display: flex;
+    @include center;
+  }
+}

@@ -1,0 +1,40 @@
+.cart {
+  @include dimentions;
+  & th, & td {
+    cursor     : context-menu;
+    text-align : center;
+  } 
+  & td picture, & thead th {
+    padding: 1rem;
+  }
+  & thead tr {
+    &:hover {
+      background-color: rgb(128, 128, 128, 0.5);
+    }
+  }
+  & tfoot tr {
+    &:hover {
+      background-color: inherit;
+    }
+  }
+  & tfoot td {
+    padding-top: 3rem;
+  }
+  & tr {
+    &:hover{
+      background-color: rgb(220, 20, 60, 0.26);
+    }
+  }
+}
+
+.table {
+  @include dimentions($width: 15rem);
+  &__header {
+    background-color: rgb(128, 128, 128, 0.5);
+  }
+  &__delete {
+    background-color : black;
+    color            : white;
+    width            : 5rem;
+  }
+}

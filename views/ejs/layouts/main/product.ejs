@@ -1,0 +1,42 @@
+<main class="page page__product">
+  <h1 class="text text__title">Detalles del producto</h1>
+  <section class="product">
+    <% if (renderProduct.product.length != 0) { %>
+      <picture class="img img__product">
+        <img src="<%= renderProduct.product.thumbnail %>" alt="<%= renderProduct.product.title %>" title="<%= renderProduct.product.title %>">
+      </picture>
+      <section class="product__container">
+        <article class="product__article">
+          <h2 class="text text--center text--uppercase product__title"><%= renderProduct.product.title %></h2>
+          <p><span style="font-weight: bold;">Price:</span> $<%= renderProduct.product.price %></p>
+          <p><span style="font-weight: bold;">Description:</span> <%= renderProduct.product.description %></p>
+          <p><span style="font-weight: bold;">Stock:</span> <span id="stock"><%= renderProduct.product.stock %></span></p>
+        </article>
+        <form action="/addToCart" method="post" style="margin-top: 2rem;">
+          <input type="text" name="idStock" value="<%= renderProduct.product._id %>" style="display: none;">
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+            <button type="button" class="btn " onclick="decrease()">-</button>
+            <input type="number" name="qty" id="qty" value="1" class="form-control text--center">
+            <button type="button" class="btn " onclick="increase()">+</button>
+          </div>
+          <% if (renderProduct.inStock) { %>
+            <button type="submit" class="btn btn__purchase">Añadir al carrito</button>
+          <% } else { %>
+            <button type="submit" class="btn btn__purchase disabled" disabled>No Stock</button>
+          <% } %>
+        </form>
+      </section>
+    <% } else { %>
+      <p class="text text__subtitle products__msg">Cargando...</p>
+    <% } %>
+  </section>
+</main>
+<script>
+  const inputQty = document.querySelector("#qty");
+  const increase = () => {
+    if(+stock.textContent > +inputQty.value) inputQty.value = +inputQty.value + 1;
+  }
+  const decrease = () => {
+    if(+inputQty.value > 1) inputQty.value = +inputQty.value - 1;
+  }
+</script>

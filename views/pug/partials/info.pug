@@ -1,0 +1,37 @@
+section(class="page page__config")
+  a(href="/" class="btn btn__link text" style="position: fixed; top: 4rem; left:4rem; padding: 2rem;") ← Salir
+  article(class="text config")
+    h1(class="text__title text--center") Información del servidor 
+    ul(class="text" style="margin-top: 1.5rem;")
+      li
+        p Argumentos de entrada:
+        p
+          =renderServerInfo.inputArguments
+      li
+        p Nombre de la plataforma (sistema operativo):
+        p
+          =renderServerInfo.platformName
+      li
+        p Node (version):
+        p
+          =renderServerInfo.versionNode
+      li
+        p Memoria total reservada (rss)::
+        p
+          =renderServerInfo.rss
+      li
+        p Path de ejecución:
+        p
+          =renderServerInfo.path
+      li
+        p Process pid:
+        p
+          =renderServerInfo.processId
+      li
+        p Carpeta del proyecto: 
+        p
+          =renderServerInfo.projectFolder
+      li
+        p Número de procesadores:
+        p
+          =renderServerInfo.numOfProcessors

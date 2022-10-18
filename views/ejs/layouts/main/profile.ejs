@@ -1,0 +1,50 @@
+<% if (renderProfilePicture) { %>
+  <section class="profile">
+    <picture class="img img__renderImg">
+      <img src="<%= 
+        renderProfilePicture.avatar != "" ? 
+        renderProfilePicture.avatar :
+        "https://img.blogs.es/anexom/wp-content/uploads/2020/06/pestana-de-incognito-navegacion-oculta.jpg"
+      %>" alt="<%= renderProfilePicture.name %>" title="Mi Avatar">
+    </picture>
+  </section>
+<% } else { %>
+  <main class="page page__profile">
+    <figure class="profile__background">
+      <picture class="img img__wallpaper">
+        <img src="https://p4.wallpaperbetter.com/wallpaper/979/801/86/minimalism-hexagon-wallpaper-preview.jpg" alt="Imagen de fondo">
+      </picture>
+      <picture class="img img__avatar">
+        <img src="<%= 
+          renderProfile.user.avatar != "" ? 
+          renderProfile.user.avatar :
+          "https://img.blogs.es/anexom/wp-content/uploads/2020/06/pestana-de-incognito-navegacion-oculta.jpg" 
+        %>" alt="<%= renderProfile.user.firstname %>" title="Mi Avatar">
+        <a href="/profile/image" class="btn btn__showImg">Ver Imagen</a>
+      </picture>
+    </figure>
+    <article>
+      <h1 class="text text__title">Mis datos personales</h1>
+      <ul class="text text--center" style="display: grid; gap: 1rem; padding: 1rem;">
+        <li>
+          <p><span style="font-weight: bold;">ID de usuario:</span> <%= renderProfile.user._id %></p>
+        </li>
+        <li>
+          <p><span style="font-weight: bold;">Email registrado:</span> <%= `${renderProfile.user.email}` %></p>
+        </li>
+        <li>
+          <p><span style="font-weight: bold;">Nombre:</span> <%= `${renderProfile.user.firstname} ${renderProfile.user.lastname}` %></p>
+        </li>
+        <li>
+          <p><span style="font-weight: bold;">Edad:</span> <%= renderProfile.user.age %></p>
+        </li>
+        <li>
+          <p><span style="font-weight: bold;">Telefono/celular:</span> <%= renderProfile.user.phone %></p>
+        </li>
+        <li>
+          <p><span style="font-weight: bold;">Dirección (delivery):</span> <%= renderProfile.user.address %></p>
+        </li>
+      </ul>
+    </article>
+  </main>
+<% } %>

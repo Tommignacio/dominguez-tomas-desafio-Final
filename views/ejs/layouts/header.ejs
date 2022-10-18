@@ -1,0 +1,12 @@
+<header class="header">
+  <section class="header__container">
+    <a class="text header__logo" href="/">e-Commerce</a>
+    <ul class="header__menu">
+      <li><a class="header__item text text__subtitle <%= actual.products %>" href="<%= page.products %>">Inicio<span></span></a></li>
+      <li><a class="header__item text text__subtitle <%= actual.cart %>" href="<%= page.cart %>">Mi Carrito<span></span></a></li>
+      <li><a class="header__item text text__subtitle <%= actual.profile %>" href="<%= page.profile %>">Perfil<span></span></a></li>
+      <li><a class="header__item text text__subtitle <%= actual.chat %>" href="<%= page.chat %>">Chat<span></span></a></li>
+      <li><a class="header__item text text__subtitle btn__logout" style="color: red; text-decoration: none;" href="/logout">Logout</a></li>
+    </ul>
+  </section>
+</header>

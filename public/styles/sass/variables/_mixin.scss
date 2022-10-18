@@ -1,0 +1,64 @@
+// █▄ ▄█ ██▀ ▄▀▄ ▄▀▀ █ █ █▀▄ ██▀ ▄▀▀ 
+// █ ▀ █ █▄▄ █▀█ ▄█▀ ▀▄█ █▀▄ █▄▄ ▄█▀ 
+@mixin responsive-x($width) {
+  @media (max-width: map-get($breakpoints-x, $width)) {
+    @content;
+  }
+}
+@mixin responsive-y($height) {
+  @media (max-height: map-get($breakpoints-y, $height)) {
+    @content;
+  }
+}
+@mixin responsive($width, $height) {
+  @media (max-width: map-get($breakpoints-x, $width)) {
+    @media (max-height: map-get($breakpoints-y, $height)) {
+      @content;
+    }
+  }
+}
+
+// ▄▀▀ █▄█ ▄▀▄ █▀▄ ▀█▀ ██▀ █▄ █ ██▀ █▀▄ 
+// ▄█▀ █ █ ▀▄▀ █▀▄  █  █▄▄ █ ▀█ █▄▄ █▀▄ 
+@mixin dimentions($zIndex: null, $width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+  @if $zIndex != null { 
+    z-index: $zIndex; 
+  }
+}
+@mixin center($margin: null, $x: center, $y: center) {
+  justify-content: $x;
+  align-items: $y;
+  @if $margin != null { 
+    margin: $margin;
+  }
+}
+@mixin img($type) {
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: $type;
+    @content;
+  }
+}
+@mixin after($content: "") {
+  &::after {
+    content: $content;
+    @content;
+  }
+}
+@mixin before($content: "") {
+  &::before {
+    content: $content;
+    @content;
+  }
+}
+@mixin adds($after, $before) {
+  @include after($after) {
+    @content;
+  }
+  @include before($before) {
+    @content;
+  }
+}

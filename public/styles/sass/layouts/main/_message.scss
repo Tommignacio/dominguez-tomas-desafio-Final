@@ -1,0 +1,40 @@
+.message {
+  height     : 29.6rem;
+  overflow-y : auto;
+  & > li:last-child {
+    margin-bottom: 1rem;
+  }
+  &__container {
+    border-radius : 0.8rem;
+    display       : grid;
+    gap           : 0.5rem;
+    padding       : 0.5rem;
+    width         : 80%;
+    & > p:nth-child(1) {
+      color       : blue;
+      font-size   : 1.3rem;
+      font-weight : bold;
+    }
+    & > p:nth-child(2) {
+      font-size   : 1.1rem;
+      font-weight : 400;
+    }
+    & > p:nth-child(3) {
+      color       : red;
+      font-size   : 0.9rem;
+      font-weight : 900;
+      margin-top  : 0.5rem;
+    }
+  }
+  &__type {
+    &-usuario {
+      background-color: rgb(220, 20, 60, 0.26);
+    }
+    &-sistema {
+      background-color: rgb(128, 128, 128, 0.5);
+    }
+  }
+  &-open {
+    height: 38rem;
+  }
+}

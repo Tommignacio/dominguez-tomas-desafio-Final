@@ -1,0 +1,11 @@
+.profile {
+  background-color : black;
+  display          : flex;
+  @include center;
+  &__background {
+    display       : flex;
+    margin-bottom : 4rem;
+    position      : relative;
+    @include center;
+  }
+}

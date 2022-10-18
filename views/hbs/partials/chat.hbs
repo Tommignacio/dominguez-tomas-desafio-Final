@@ -1,0 +1,38 @@
+<section class="page page__chat">
+  <section class="chat">
+    {{#if renderChat.emailUser}}
+      <section class="chat__container">
+        <ol id="render-message" class="message">
+        </ol>
+      </section>
+      <section>
+        <a href="/chat/{{renderChat.emailUser}}" class="text text--center btn btn__link">Ver mis mensajes</a>
+      </section>
+      <form action="" class="aside__send-messages" id="form-message">
+        <input type="text" name="message" id="input-message">
+        <button type="submit" class="btn" id="btn-message">send</button>
+      </form>
+    {{else}}
+      <section class="chat__container" style="height: calc(100% - 3.3rem);">
+        <ol class="message">
+          {{#each renderChat.messages}}
+            <li style="display: flex; padding: 1rem; justify-content: flex-end">
+              <div class="message__container message__type-{{this.type}}" style="width: calc(100% - 10rem);">
+                <p>{{this.nickname}}</b>
+                <p>{{this.message}} 
+                  {{#if this.route}}
+                    <a href="{{this.route.path}}">{{this.route.name}}</a>
+                  {{/if}}
+                </p>
+                <p>{{ this.updatedAt }}</p> 
+              </div>
+            </li>
+          {{/each}}
+        </ol>
+      </section>
+      <section>
+        <a href="/chat" class="text text--center btn btn__link">Regresar</a>
+      </section>
+    {{/if}}
+  </section>
+</section>
