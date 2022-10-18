@@ -96,7 +96,7 @@ _- Modificar el archivo .env de la siguiente manera:_
 - Cambiar el nombre a ".env"
 - Modificar los datos y guardar.
 
-_- Usar user admin para funciones de la API con postman :_
+_- Usar user admin para funciones de la API REST con postman :_
 
 - Poner en el env:
 
@@ -116,7 +116,7 @@ Password: 1
 
 ## **Recomendaciones 💬**
 
-- _Eliminar isAdmim y auth de las rutas para usar funcionalidades de la API con Postman ._
+- _Eliminar middlewares : isAdmim y auth de todas las rutas en [collections.routes.js] para usar funcionalidades de la API con Postman (POST,PUT,CREATE,DELETE) ._
 
 - _Leer el archivo "env.md" para ver mas detalles a considerar._
 

@@ -11,7 +11,7 @@
   }
   position    : relative;
   &__modal {
-    background-color : blue;
+    background-color : green;
     border-radius    : 2rem;
     display          : flex;
     flex-direction   : column;
@@ -68,7 +68,7 @@
     }
   }
   &__form {
-    background-color      : orange;
+    background-color      : grey;
     display               : grid;
     grid-template-columns : repeat(2, 1fr);
     padding               : 0 1rem;
